@@ -10,7 +10,7 @@ const int readPin = 2;
 const int debounceDelay = 50;
 int lastDebounce = 0;
 int x = 0;
-bool countUp = false;
+bool countUp = true;
 
 void setup() {
   // put your setup code here, to run once:
@@ -26,22 +26,29 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  if(x-1 < 0 || x+1 > 9){
-    countUp = !countUp;
-  }
 
   int reading = digitalRead(readPin);
 
   if(reading == LOW){
 
-    delay(debounceDelay); 
-
     /*
-     * when pressing a mechanical button, the electrical connection connects and disconnects briefly before getting to the desired state
-     * delaying 50 milliseconds and then rechecking buttonState ensures the unwanted buttonState changes are not accounted for
+     * millis() is an inbuilt Arduino function that counts the milliseconds elapsed since the program began. 
+     * The new debounce mechanism functions similarly to a simple delay(), but the program doesn't pause, allowing the Arduino to continuously update the display 
+     * and poll button readings. 
      */
 
-    if(digitalRead(readPin) == LOW){
+    if(millis() - lastDebounce > debounceDelay){
+
+      /*
+       * Previously, direction checking logic was outside of the button press conditional; this led to Arduino constantly changing direction of counting at 0 and 9 even 
+       * when the button was not being pressed. 
+       * Additionally, checking that the count direction is wrong before changing it saves the program from incorrectly changing direction if the debounce 
+       * mechanism fails.
+       */
+
+      if((x-1 < 0 && countUp == false) || (x+1 > 9 && countUp == true)){
+        countUp = !countUp;
+      }
 
       if(countUp){
         x++;
@@ -50,6 +57,8 @@ void loop() {
       else{
         x--;
       }
+
+      lastDebounce = millis();
       
     }
 
