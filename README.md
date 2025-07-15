@@ -41,21 +41,26 @@ lightSwitch:
 
 Light Switch turns an LED on when a push button is pressed.
 
+
 RGBPicker:
 
 RGB Picker takes the user’s color as input and outputs a preset RGB combination.
+
 
 pushButtonCounter:
 
 Push-button Counter increments the value on a seven-segment LED display through a button press.
 
+
 twoButtonCounter:
 
 Two-button Counter allows you to increment or decrement the value on a seven-segment LED display.
 
+
 nightLight:
 
 Night Light utilizes a photoresistor to adjust the brightness of an LED based on surrounding light levels.
+
 
 4BitBaseTenToBinary:
 
