@@ -22,13 +22,13 @@ void loop() {
   Serial.println(tiltVal);
 
   if(tiltVal == 0){
-    digitalWrite(redPin, HIGH);
-    digitalWrite(greenPin, LOW);
+    digitalWrite(redPin, LOW);
+    digitalWrite(greenPin, HIGH);
   }
 
   else{
-    digitalWrite(redPin, LOW);
-    digitalWrite(greenPin, HIGH);
+    digitalWrite(redPin, HIGH);
+    digitalWrite(greenPin, LOW);
   }
 
   delay(dt);
