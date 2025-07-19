@@ -2,11 +2,9 @@ const int latchPin = 11; // when to accept data LOW = accepting, HIGH = not acce
 const int clockPin = 9; // helps synchronize serial data to the shift register
 const int dataPin = 12; // takes input
 
-byte myByte = 0b01010101;
+byte myByte = 0b10000001;
 
 int dt = 1000;
-
-bool add1 = false;
 
 void setup() {
   // put your setup code here, to run once:
@@ -23,12 +21,9 @@ void loop() {
   digitalWrite(latchPin, LOW); // ready for data
   shiftOut(dataPin, clockPin, LSBFIRST, myByte); // shift out byte of data bit by bit, clock does synchronization, least significant bit comes first, LEDs is data packet being sent.
   digitalWrite(latchPin, HIGH); // done accepting data
-  Serial.println(myByte, BIN); // represent in 0s and 1s in serial monitor
+  Serial.println(myByte, DEC); // represent in 0s and 1s in serial monitor
   delay(dt); // lets us see the value for 1 second
 
-  if(myByte >= 128) add1 = true; // checks if digit being looped is 1; if so, add1 is true
-  else add1 = false; // if not add1 is false
-  myByte = myByte * 2; // logical shift left
-  if(add1 == true) myByte = myByte + 1; // accounts for looped digit based off add1 status
+  myByte = myByte * 128 + myByte/2; // seems counterintuitive but it's fine because if myByte goes over 255 it wraps around (value = value % 255) 
   
 }
