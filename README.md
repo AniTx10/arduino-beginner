@@ -2,62 +2,62 @@
 My beginner Arduino projects:
 
 
-blinkCycle:
+## blinkCycle:
 
 Blink cycle varies the interval between the built-in LED flashes on the Arduino UNO. Fast -> slow -> fast.
 
 
-trafficLightIntersection:
+## trafficLightIntersection:
 
 Traffic light intersection project builds on the basic traffic light project by portraying perpendicular lights at an intersection simultaneously.
 
 
-distanceReader:
+## distanceReader:
 
 Distance Reader uses an ultrasonic sensor to output the distance of an object from the sensor in centimeters. It is accurate within a 2 to 400 centimeter range of the sensor.
 
 
-speedTracker:
+## speedTracker:
 
 Speed Tracker leverages the distance reader to track the live speed of an object.
 
 
-dimmableLED:
+## dimmableLED:
 
 Dimmable LED utilizes a potentiometer (a voltage divider that can change the resistance allotted to each resistor with a knob) to vary the brightness of an LED.
 
 
-simpleBuzzModulator:
+## simpleBuzzModulator:
 
 Simple Buzz Modulator leverages the code from dimmableLED, but uses a buzzer as the output device instead of an LED.
 
 
-melodyBuzzer:
+## melodyBuzzer:
 
 Melody Buzzer plays a simple melody on a passive buzzer utilizing a pitch library.
 
 
-lightSwitch:
+## lightSwitch:
 
 Light Switch turns an LED on when a push button is pressed.
 
 
-RGBPicker:
+## RGBPicker:
 
 RGB Picker takes the user’s color as input and outputs a preset RGB combination.
 
 
-pushButtonCounter:
+## pushButtonCounter:
 
 Push-button Counter increments the value on a seven-segment LED display through a button press.
 
 
-twoButtonCounter:
+## twoButtonCounter:
 
 Two-button Counter allows you to increment or decrement the value on a seven-segment LED display.
 
 
-nightLight:
+## nightLight:
 
 Night Light utilizes a photoresistor to adjust the brightness of an LED based on surrounding light levels.
 
