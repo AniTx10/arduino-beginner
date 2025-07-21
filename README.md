@@ -62,7 +62,7 @@ Two-button Counter allows you to increment or decrement the value on a seven-seg
 Night Light utilizes a photoresistor to adjust the brightness of an LED based on surrounding light levels.
 
 
-4BitBaseTenToBinary:
+## 4BitBaseTenToBinary:
 
 This project uses four LEDs to visually display the binary representation of a number (0-15) entered by the user.
 
